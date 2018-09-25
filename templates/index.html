@@ -1,0 +1,143 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset = "UTF-8">
+		<title> Tanda -AAA Project- </title>
+		<link rel="stylesheet" type="text/css" href="{% static "style.css" %}" />
+	</head>
+
+	<body id = "IndexImage">
+		<div class = "UISpace">
+
+			<!-- Header zone -->
+			<div id = "HeaderSpace">	
+				<div class = "Header">
+					<a id = "Logo" href="conditions/">
+						<img src = "{% static "logo2.png" %}" alt = "logo" style="width:150px;height: 55px;">
+					</a>
+				</div>
+			</div>
+
+			<!-- Body zone -->
+			<div class = "ContentSpace">
+
+				<!-- Left size zone (for EBA in this project) -->
+				<div class = "left-half">
+
+					<!-- Left side title -->
+					<div id = "MainContent"> Upload EBA </div>
+
+					<!-- Left side content -->
+					<form id="form">
+
+						<!-- Browse files -->
+						<input type="file"/>
+				
+						<!-- text box to display EBA results -->
+						<div id = "EBAResult">
+
+						</div>
+
+						<!-- Document preview link -->
+						<div class = "previewLink">
+							<a href="">Document preview</a>
+						</div>
+
+					</form>
+				</div>
+
+				<!-- Right side zone (for AWARD in this project) -->
+				<div class = "right-half">
+
+					<!-- Right side title -->
+					<div id = "MainContent"> Choose Award </div>
+
+					<!-- Right side content -->
+					<div id = "selectForm">
+						<table>
+							<tr>
+								<th>Asphalt Industry Award 2010</th>
+							</tr>
+							<tr>
+								<th>Animal Care and Veterinary Services Award 2010</th>
+							</tr>
+							<tr>
+								<th>Aged Care Award 2010</th>
+							</tr>
+							<tr>
+								<th>Amusement, Events and Recreation Award 2010</th>
+							</tr>
+							<tr>
+								<th>Aquaculture Industry Award 2010</th>
+							</tr>
+							<tr>
+								<th>Book Industry Award 2010</th>
+							</tr>
+							<tr>
+								<th>Building and Construction General On-site Award 2010</th>
+							</tr>
+							<tr>
+								<th>Car Parking Award 2010</th>
+							</tr>
+							<tr>
+								<th>Cemetery Industry Award 2010</th>
+							</tr>
+							<tr>
+								<th>Children's Services Award 2010</th>
+							</tr>
+							<tr>
+								<th>Cleaning Services Award 2010</th>
+							</tr>
+							<tr>
+								<th>Clerks-Private Sector Award 2010</th>
+							</tr>
+							<tr>
+								<th>Cotton Ginning Award 2010</th>
+							</tr>
+							<tr>
+								<th>Dry Cleaning and Laundry Industry Award 2010</th>
+							</tr>
+							<tr>
+								<th>Educational Services (Post-Secondary Education) Award 2010</th>
+							</tr>
+							<tr>
+								<th>Educational Services (Teachers) Award 2010</th>
+							</tr>
+							<tr>
+								<th>Gardening and Landscaping Services Award 2010</th>
+							</tr>
+							<tr>
+								<th>Graphic Arts, Printing and Publishing Award 2010</th>
+							</tr>
+							<tr>
+								<th>Horticulture Award 2010</th>
+							</tr>
+							<tr>
+								<th>Journalists Published Media Award 2010</th>
+							</tr>
+							<tr>
+								<th>Mannequins and Models Award 2010</th>
+							</tr>
+							<tr>
+								<th>Marine Tourism and Charter Vessels Award 2010</th>
+							</tr>
+						</table>
+					</div>
+				</div>
+
+				<!-- Button to compare page -->
+				<form action="compare/" id="buttonSpace">
+					<button class="compareButton">click to compare</button>
+				</form>
+			</div>
+
+			<!-- Footer zone -->
+			<div class = "FooterSpace">
+				<div class = "Footer" style="color:#D4D4D4;"><br><p>Tanda - Contact Us: info@tanda.co</p></div>
+			</div>
+
+		</div>
+	</body>
+</html>
