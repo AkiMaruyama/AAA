@@ -247,6 +247,17 @@ article {
 	margin-top: 100px;
 	overflow: scroll;
 }
+
+#scoreSpace {
+	left: 35%;
+	position: absolute;
+	bottom: 70px;
+}
+
+.scoreResult {
+	color: white;
+	font-size: 40px;
+}
 /*
 
 input[type=submit] {
