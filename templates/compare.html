@@ -1,7 +1,6 @@
 {% load static %}
 <!DOCTYPE html>
 <html>
-
 	<head>
 		<meta charset = "UTF-8">
 		<title> Tanda -AAA Project- </title>
@@ -15,7 +14,7 @@
 			<div id = "HeaderSpace">	
 				<div class = "Header">
 					<a id = "Logo">
-						<img src = "{% static "logo2.png" %}" alt = "logo" style="width:150px;height: 55px;">
+						<img src = "{% static "logo2.png" %}" alt = "logo" style="widtd:150px;height: 55px;">
 					</a>
 				</div>
 			</div>
@@ -27,18 +26,78 @@
 
 					<!-- Left side title -->
 					<div id = "MainContent"> Results </div>
-			
-					<label class="container">Ordinary hours of work: </label>
-					<label class="container">Maximum daily working hours: </label>
-					<label class="container">Minimum daily working hours: </label>
-					<label class="container">Maximum weekly working hours: </label>
-					<label class="container">Public holiday rate: </label>
-					<label class="container">Overtime conditions: </label>
-					<label class="container">Casual loading: </label>
-					<label class="container">Saturday rate: </label>
-					<label class="container">Sunday rate: </label>
-					<label class="container">Minimum break between shifts: </label>
+					<div id = "left_side">
+						<table id="customers">
+							<tr>
+							<th>Condition</th>
+							<th>Result</th> 
+							</tr>
+							<td>Ordinary Hours of Work</td>
+							{% if ordinary_hours %}
+							<td>{{ ordinary_hours }}</td>
+							{% endif %}
+						</tr>
 
+						<tr>
+							<td>Maximum Daily Working Hours</td>
+							{% if max_daily %}
+							<td>{{ max_daily }}</td>
+							{% endif %}	
+						</tr>
+						
+						<tr>
+							<td>Minimum Daily Working Hours</td>
+							{% if max_week %}
+							<td>{{ max_week }}</td>
+							{% endif %}	
+						</tr>
+						
+						<tr>
+							<td>Maximum Weekly Working Hours</td>
+							{% if public_holiday %}
+							<td>{{ public_holiday }}</td>
+							{% endif %}
+						</tr>
+						
+						<tr>
+							<td>Public Holiday Rate</td>
+							{% if overtime %}
+							<td>{{ overtime }}</td>
+							{% endif %}
+						</tr>
+						<tr>
+							<td>Overtime Conditions</td>
+							{% if casual_loading %}
+							<td>{{ casual_loading }}</td>
+							{% endif %}
+						</tr>
+						<tr>
+							<td>Casual Loading %</td>
+							{% if sat_rate %}
+							<td>{{ sat_rate }}</td>
+							{% endif %}
+						</tr>
+
+						<tr>
+							<td>Saturday Rate</td>
+							{% if sun_rate %}
+							<td>{{ sun_rate }}</td>
+							{% endif %}
+						</tr>
+						<tr>
+							<td>Sunday Rate</td>
+							{% if mini %}
+							<td>{{ mini }}</td>
+							{% endif %}
+						</tr>
+						<tr>
+							<td>Minimum Break Between Shifts</td>
+							{% if mini %}
+							<td>{{ mini_f }}</td>
+							{% endif %}
+						</tr>
+						</table>
+					</div>
 				</div>
 
 				<div class = "right-half-compare">

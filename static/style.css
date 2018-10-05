@@ -54,6 +54,10 @@ body {
 	color: white;
 	font-weight: bold;
 }
+
+#left_side {
+	margin-left: 75px;
+}
 /*
 .compareButton {
 	margin-top: 100px;
@@ -108,7 +112,7 @@ body {
 	overflow: auto;
 }
 
-table, td, th {
+/* table, td, th {
 	border: 1px solid black;
 }
 
@@ -119,7 +123,7 @@ table {
 
 th, td {
 	padding: 10px;
-}
+} */
 
 #buttonSpace {
 	left: 45%;
@@ -258,10 +262,8 @@ article {
 	color: white;
 	font-size: 40px;
 }
-/*
 
 input[type=submit] {
-    width: 30%;
     background-color: #F9AA1E;
     color: white;
     padding: 14px 20px;
@@ -276,6 +278,11 @@ input[type=submit] {
 input[type=submit]:hover {
     background-color: #EA9E16;
 }
+/*
+
+
+
+
 
 #tables {
     font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
@@ -338,4 +345,29 @@ input[type=text], select {
 
 #heading{
 	margin: 20px;
+}
+
+
+#customers {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 70%;
+}
+
+#customers td, #customers th {
+    border: 1px solid #ddd;
+	padding: 8px;
+	color: #383838;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #EA9E16;
+    color: white;
 }

@@ -61,6 +61,22 @@ def download(url = 'http://www.wikipedia.org/',
     TAG_RE = re.compile(r'<[^>]+>') 
     return TAG_RE.sub('', web_page_contents)
 
+# def read_file(link):
+# 	file_list = []
+# 	with open(os.path.join(BASE_DIR, 'EBA Phrasing Register - Sheet1.csv'), 'r') as f:
+# 		reader = csv.reader(f)
+# 		file_list = list(reader)
+# 	if link.lower() in 'supabarn eba':
+# 		return file_list[2]
+# 	elif link.lower() in 'atco eba':
+# 		return file_list[3]
+# 	elif link.lower() in 'armenian eba':
+# 		return file_list[4]
+# 	elif link.lower() in 'asphalt industry award 2010': # this statement was added by Aki (n9534041)
+# 		return file_list[5]
+# 	else:
+# 		return None
+
 def read_file(link):
 	file_list = []
 	with open(os.path.join(BASE_DIR, 'EBA Phrasing Register - Sheet1.csv'), 'r') as f:
@@ -72,8 +88,6 @@ def read_file(link):
 		return file_list[3]
 	elif link.lower() in 'armenian eba':
 		return file_list[4]
-	elif link.lower() in 'asphalt industry award 2010': # this statement was added by Aki (n9534041)
-		return file_list[5]
 	else:
 		return None
 
@@ -143,10 +157,11 @@ def index(request):
     # context = {'name': output}
     return render(request, 'index.html')
 
-def link(request):
+def compare(request):
 	context = {}
 	if request.method == 'POST':
-		link = request.POST['link']
+		# link = request.POST['link']
+		link = 'armenian'
 		# content = download(link)
 		# ordinary_hours = extract_ordinary_hours(content)
 		# max_daily = extract_max_daily_hours(content)
@@ -195,11 +210,11 @@ def link(request):
 					'name': name,
 					'link': link
 		}
-	return render(request, 'link.html', context)
+	return render(request, 'compare.html', context)
 
-# Create a compare page
-def compare(request):
-    return render(request, 'compare.html')
+# # Create a compare page
+# def compare(request):
+#     return render(request, 'compare.html')
 
 # Create a compare page
 def conditions(request):
