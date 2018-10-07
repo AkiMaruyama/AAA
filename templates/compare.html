@@ -19,46 +19,39 @@
 				</div>
 			</div>
 
-			<!-- Body zone -->
-			<div class = "ContentSpace">
-
-				<div class = "left-half-compare">
-
-					<!-- Left side title -->
-					<div id = "MainContent"> Results </div>
-					<div id = "left_side">
+			<div class="rowSpace">
+				<div class="columnSpace">
+					<div id="MainContent">Results</div>
+					<div class="overflowSpace">
 						<table id="customers">
-							<tr>
+						<tr>
 							<th>Condition</th>
 							<th>Result</th> 
-							</tr>
+						</tr>
+						<tr>
 							<td>Ordinary Hours of Work</td>
 							{% if ordinary_hours %}
 							<td>{{ ordinary_hours }}</td>
 							{% endif %}
 						</tr>
-
 						<tr>
 							<td>Maximum Daily Working Hours</td>
 							{% if max_daily %}
 							<td>{{ max_daily }}</td>
 							{% endif %}	
 						</tr>
-						
 						<tr>
 							<td>Minimum Daily Working Hours</td>
 							{% if max_week %}
 							<td>{{ max_week }}</td>
 							{% endif %}	
 						</tr>
-						
 						<tr>
 							<td>Maximum Weekly Working Hours</td>
 							{% if public_holiday %}
 							<td>{{ public_holiday }}</td>
 							{% endif %}
 						</tr>
-						
 						<tr>
 							<td>Public Holiday Rate</td>
 							{% if overtime %}
@@ -77,7 +70,6 @@
 							<td>{{ sat_rate }}</td>
 							{% endif %}
 						</tr>
-
 						<tr>
 							<td>Saturday Rate</td>
 							{% if sun_rate %}
@@ -100,58 +92,64 @@
 					</div>
 				</div>
 
-				<div class = "right-half-compare">
+				<div class="columnSpace">
 
 					<div id = "MainContent"> Compared conditions </div>
 
-					<label class="container"> // value here //
+					<label class="container"> // data //
 						<input type="checkbox">
 						<span class="checkmark"></span>
 					</label>
-					<label class="container"> // value here //
+					<label class="container"> // data //
 						<input type="checkbox">
 						<span class="checkmark"></span>
 					</label>
-					<label class="container"> // value here //
+					<label class="container"> // data //
 						<input type="checkbox">
 						<span class="checkmark"></span>
 					</label>
-					<label class="container"> // value here //
+					<label class="container"> // data //
 						<input type="checkbox">
 						<span class="checkmark"></span>
 					</label>
-					<label class="container"> // value here //
+					<label class="container"> // data //
 						<input type="checkbox">
 						<span class="checkmark"></span>
 					</label>
-					<label class="container"> // value here //
+					<label class="container"> // data //
 						<input type="checkbox">
 						<span class="checkmark"></span>
 					</label>
-					<label class="container"> // value here //
+					<label class="container"> // data //
 						<input type="checkbox">
 						<span class="checkmark"></span>
 					</label>
-					<label class="container"> // value here //
+					<label class="container"> // data //
 						<input type="checkbox">
 						<span class="checkmark"></span>
 					</label>
-					<label class="container"> // value here //
+					<label class="container"> // data //
 						<input type="checkbox">
 						<span class="checkmark"></span>
 					</label>
-					<label class="container"> // value here //
+					<label class="container"> // data //
 						<input type="checkbox">
 						<span class="checkmark"></span>
 					</label>
-						
 				</div>
 
+				<div class="columnSpace1">
+					<div id="scoreResult">
+						<p class = "scoreResult"> Score = score / score </p>
+					</div>
+				</div>
+			</div>
+<!-- 
 				<div id="scoreSpace">
 					<p class = "scoreResult"> Score = score / score </p>
 				</div>
 
-			</div>
+			</div> -->
 
 			<!-- Footer zone -->
 			<div class = "FooterSpace">

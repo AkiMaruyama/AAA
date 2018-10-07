@@ -58,23 +58,6 @@ body {
 #left_side {
 	margin-left: 75px;
 }
-/*
-.compareButton {
-	margin-top: 100px;
-	border: none;
-	font-size: 15px;
-	color: white;
-	border-radius: 30px;
-	border-color: #F9AA1E;
-	background: #F9AA1E;
-	width: 250px;
-	height: 50px;
-}
-
-.compareButton:hover {
-	background: #EA9E16;
-}
-*/
 
 .left-half {
 	position: absolute;
@@ -111,19 +94,6 @@ body {
 	background-color: white;
 	overflow: auto;
 }
-
-/* table, td, th {
-	border: 1px solid black;
-}
-
-table {
-	border-collapse: collapse;
-	width: 100%;
-}
-
-th, td {
-	padding: 10px;
-} */
 
 #buttonSpace {
 	left: 45%;
@@ -181,10 +151,9 @@ th, td {
 }
 
 .checkmark {
-	margin-left: 140px;
+	right: 10px;
     position: absolute;
     top: 0;
-    left: 0;
     height: 25px;
     width: 25px;
     background-color: #eee;
@@ -253,7 +222,7 @@ article {
 }
 
 #scoreSpace {
-	left: 35%;
+	left: 25%;
 	position: absolute;
 	bottom: 70px;
 }
@@ -278,55 +247,6 @@ input[type=submit] {
 input[type=submit]:hover {
     background-color: #EA9E16;
 }
-/*
-
-
-
-
-
-#tables {
-    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-    border-collapse: collapse;
-	width: 100%;
-	font-size: 16px;
-}
-
-#tables td, #tables th {
-    border: 1px solid #ddd;
-	padding: 8px;
-	color: black;
-}
-
-#tables tr {
-	background-color: #f2f2f2;
-}
-
-#tables tr:hover {
-	background-color: #ddd;
-}
-
-#tables th {
-    padding-top: 3px;
-    padding-bottom: 3px;
-    text-align: left;
-    background-color: #F9AA1E;
-	color: white;
-	width: 15%;
-
-#SubContent_0 {
-	margin-top: 10px;
-	padding: 5px 10px;
-	font-size: 22px;
-	color: white;
-}
-
-#SubContent_1 {
-	padding: 5px 10px;
-	font-size: 22px;
-	color: white;
-}
-
-}*/
 
 input[type=text], select {
     width: 70%;
@@ -347,11 +267,17 @@ input[type=text], select {
 	margin: 20px;
 }
 
+#customersScroll{
+	overflow: auto;
+	width: 90%;
+	height: 70%;
+	overflow: auto;
+}
 
 #customers {
     font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
     border-collapse: collapse;
-    width: 70%;
+	/*width: 90%;*/
 }
 
 #customers td, #customers th {
@@ -370,4 +296,28 @@ input[type=text], select {
     text-align: left;
     background-color: #EA9E16;
     color: white;
+}
+
+.rowSpace::after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+.columnSpace {
+	margin-top: 35px;
+	padding: 15px;
+	float: left;
+	width: 45%;
+}
+
+.columnSpace1 {
+	float: left;
+	margin-left: 10px;
+	width: 100%;
+}
+
+.overflowSpace {
+	height: 600px;
+	overflow: auto;
 }
