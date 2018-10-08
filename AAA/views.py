@@ -52,10 +52,15 @@ def compare(request):
 		'casual_loading': ['30%',int(cl) >= 30],
 		'public_holiday': ['2x',pr_int >= 2]
 		}
-	
+		scores = 0
+		for i in compared_condition.values():
+			if i[1]:
+				scores+=1
+
 	return render(request, 'compare.html', {
 		'data': context.items(),
-		'compared': compared_condition.values()
+		'compared': compared_condition.values(),
+		'score': scores/5
 	})
 
 # Create a compare page
