@@ -19,18 +19,15 @@
 				</div>
 			</div>
 
-			<!-- Body zone -->
-			<div class = "ContentSpace">
-
-				<div class = "left-half-compare">
-
-					<!-- Left side title -->
-					<div id = "MainContent"> Results </div>
-					<div id = "left_side">
+			<div class="rowSpace">
+				<div class="columnSpace">
+					<div id="MainContent">Results</div>
+					<div class="overflowSpace">
 						<table id="customers">
-							<tr>
+						<tr>
 							<th>Condition</th>
 							<th>Result</th> 
+<<<<<<< HEAD
 							</tr>
 							{% for key, value in data %}
 								<tr>
@@ -38,13 +35,77 @@
 									<td> {{ value }} </td>
 								</tr>
 							{% endfor %}
+=======
+						</tr>
+						<tr>
+							<td>Ordinary Hours of Work</td>
+							{% if ordinary_hours %}
+							<td>{{ ordinary_hours }}</td>
+							{% endif %}
+						</tr>
+						<tr>
+							<td>Maximum Daily Working Hours</td>
+							{% if max_daily %}
+							<td>{{ max_daily }}</td>
+							{% endif %}	
+						</tr>
+						<tr>
+							<td>Minimum Daily Working Hours</td>
+							{% if max_week %}
+							<td>{{ max_week }}</td>
+							{% endif %}	
+						</tr>
+						<tr>
+							<td>Maximum Weekly Working Hours</td>
+							{% if public_holiday %}
+							<td>{{ public_holiday }}</td>
+							{% endif %}
+						</tr>
+						<tr>
+							<td>Public Holiday Rate</td>
+							{% if overtime %}
+							<td>{{ overtime }}</td>
+							{% endif %}
+						</tr>
+						<tr>
+							<td>Overtime Conditions</td>
+							{% if casual_loading %}
+							<td>{{ casual_loading }}</td>
+							{% endif %}
+						</tr>
+						<tr>
+							<td>Casual Loading %</td>
+							{% if sat_rate %}
+							<td>{{ sat_rate }}</td>
+							{% endif %}
+						</tr>
+						<tr>
+							<td>Saturday Rate</td>
+							{% if sun_rate %}
+							<td>{{ sun_rate }}</td>
+							{% endif %}
+						</tr>
+						<tr>
+							<td>Sunday Rate</td>
+							{% if mini %}
+							<td>{{ mini }}</td>
+							{% endif %}
+						</tr>
+						<tr>
+							<td>Minimum Break Between Shifts</td>
+							{% if mini %}
+							<td>{{ mini_f }}</td>
+							{% endif %}
+						</tr>
+>>>>>>> ad68404cad79d556cb47283dcb22b8f5f81d4231
 						</table>
 					</div>
 				</div>
 
-				<div class = "right-half-compare">
+				<div class="columnSpace">
 
 					<div id = "MainContent"> Compared conditions </div>
+<<<<<<< HEAD
 					{% for value in compared %}
 					<label class="container"> {{ value }}
 						<input type="checkbox">
@@ -52,12 +113,67 @@
 					</label>
 					</tr>
 					{% endfor %}		
+=======
+
+					<label class="container"> // data //
+						<input type="checkbox">
+						<span class="checkmark"></span>
+					</label>
+					<label class="container"> // data //
+						<input type="checkbox">
+						<span class="checkmark"></span>
+					</label>
+					<label class="container"> // data //
+						<input type="checkbox">
+						<span class="checkmark"></span>
+					</label>
+					<label class="container"> // data //
+						<input type="checkbox">
+						<span class="checkmark"></span>
+					</label>
+					<label class="container"> // data //
+						<input type="checkbox">
+						<span class="checkmark"></span>
+					</label>
+					<label class="container"> // data //
+						<input type="checkbox">
+						<span class="checkmark"></span>
+					</label>
+					<label class="container"> // data //
+						<input type="checkbox">
+						<span class="checkmark"></span>
+					</label>
+					<label class="container"> // data //
+						<input type="checkbox">
+						<span class="checkmark"></span>
+					</label>
+					<label class="container"> // data //
+						<input type="checkbox">
+						<span class="checkmark"></span>
+					</label>
+					<label class="container"> // data //
+						<input type="checkbox">
+						<span class="checkmark"></span>
+					</label>
+>>>>>>> ad68404cad79d556cb47283dcb22b8f5f81d4231
 				</div>
 
+				<div class="columnSpace1">
+					<div id="scoreResult">
+						<p class = "scoreResult"> Score = score / score </p>
+					</div>
+				</div>
+			</div>
+<!-- 
 				<div id="scoreSpace">
 					<p class = "scoreResult"> Score = score / score </p>
 				</div>
+<<<<<<< HEAD
 			</div>
+=======
+
+			</div> -->
+>>>>>>> ad68404cad79d556cb47283dcb22b8f5f81d4231
 
 			<!-- Footer zone -->
 			<div class = "FooterSpace">
