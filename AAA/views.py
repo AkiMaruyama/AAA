@@ -5,6 +5,7 @@ import os
 from .forms import LinkForm
 import csv
 from django.contrib import messages
+from download import *
 
 # extract information about ordinary_hours
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -13,69 +14,6 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 file = open(os.path.join(BASE_DIR, 'download.txt'), 'r')
 text=file.read().replace('\n','').replace('-', ' ')
 
-def download(url = 'http://www.wikipedia.org/',
-             target_filename = 'download',
-             filename_extension = 'txt'):
-
-    # Import the function for opening online documents
-    from urllib.request import urlopen
-
-    # Import an exception raised when a web server denies access
-    # to a document
-    from urllib.error import HTTPError
-
-    import re
-
-    # Open the web document for reading
-    try:
-        web_page = urlopen(url)
-    except ValueError:
-        raise Exception("Download error - Cannot find document at URL '" + url + "'")
-    except HTTPError:
-        raise Exception("Download error - Access denied to document at URL '" + url + "'")
-    except:
-        raise Exception("Download error - Something went wrong when trying to download " + \
-                        "the document at URL '" + url + "'")
-
-    # Read its contents as a Unicode string
-    try:
-        web_page_contents = web_page.read().decode('UTF-8')
-    except UnicodeDecodeError:
-        raise Exception("Download error - Unable to decode document at URL '" + \
-                        url + "' as Unicode text")
-
-    # Write the contents to a local text file as Unicode
-    # characters (overwriting the file if it
-    # already exists!)
-    try:
-        text_file = open(target_filename + '.' + filename_extension,
-                         'w', encoding = 'UTF-8')
-        TAG_RE = re.compile(r'<[^>]+>') 
-        text_file.write(TAG_RE.sub('', web_page_contents))
-        text_file.close()
-    except:
-        raise Exception("Download error - Unable to write to file '" + \
-                        target_file + "'")
-
-    # Return the downloaded document to the caller
-    TAG_RE = re.compile(r'<[^>]+>') 
-    return TAG_RE.sub('', web_page_contents)
-
-# def read_file(link):
-# 	file_list = []
-# 	with open(os.path.join(BASE_DIR, 'EBA Phrasing Register - Sheet1.csv'), 'r') as f:
-# 		reader = csv.reader(f)
-# 		file_list = list(reader)
-# 	if link.lower() in 'supabarn eba':
-# 		return file_list[2]
-# 	elif link.lower() in 'atco eba':
-# 		return file_list[3]
-# 	elif link.lower() in 'armenian eba':
-# 		return file_list[4]
-# 	elif link.lower() in 'asphalt industry award 2010': # this statement was added by Aki (n9534041)
-# 		return file_list[5]
-# 	else:
-# 		return None
 
 def read_file(link):
 	file_list = []
@@ -157,6 +95,16 @@ def index(request):
     # context = {'name': output}
     return render(request, 'index.html')
 
+compared_condition = {
+ 	'ordinary_hours': '5am-7pm',
+	'max_daily': '8 hours',
+	'max_week': '4 hours',
+	'overtime': '38 hours',
+	'sat_rate': '1.5x',
+	'sun_rate': '1.5%',
+	'casual_loading': '30%',
+	'public_holiday': '2x',
+}
 def compare(request):
 	context = {}
 	if request.method == 'POST':
@@ -194,10 +142,7 @@ def compare(request):
 		sun_rate = content[7]
 		casual_loading =content[8]
 		public_holiday = content[9]
-		mini = content[10]
-		mini_f = content[11]
-		context = {'link': content,
-					'ordinary_hours': ordinary_hours,
+		context = { 'ordinary_hours': ordinary_hours,
 					'max_daily': max_daily,
 					'max_week': max_week,
 					'overtime': overtime,
@@ -205,16 +150,8 @@ def compare(request):
 					'sun_rate': sun_rate,
 					'casual_loading': casual_loading,
 					'public_holiday': public_holiday,
-					'mini': mini,
-					'mini_f': mini_f,
-					'name': name,
-					'link': link
 		}
-	return render(request, 'compare.html', context)
-
-# # Create a compare page
-# def compare(request):
-#     return render(request, 'compare.html')
+	return render(request, 'compare.html', {'data': context.items(), 'compared': compared_condition.values()})
 
 # Create a compare page
 def conditions(request):
