@@ -57,9 +57,18 @@
 					<!-- Right side title -->
 					<div id = "MainContent"> Choose Award </div>
 
+<!-- 					<div id="buttonSpace"> -->
+						<form action="compare/" method="post">
+							{% csrf_token %}
+							<label for="link">Please enter link: </label>
+		    				<input id="link" type="text" name="link" value="{{ link }}">
+							<input type="submit" value="Submit" />
+						</form>
+<!-- 						</div> -->
 					<!-- Right side content -->
-					<div id = "selectForm">
-						<table id="rowClick">
+					<!-- <div id = "selectForm"> -->
+
+<!-- 						<table id="rowClick">
 							<tr>
 								<th>Asphalt Industry Award 2010</th>
 							</tr>
@@ -68,8 +77,8 @@
 							</tr>
 							<tr>
 								<th>Aged Care Award 2010</th>
-							</tr>
-							<tr>
+							</tr> -->
+<!-- 							<tr>
 								<th>Amusement, Events and Recreation Award 2010</th>
 							</tr>
 							<tr>
@@ -125,18 +134,13 @@
 							</tr>
 							<tr>
 								<th>Marine Tourism and Charter Vessels Award 2010</th>
-							</tr>
-						</table>
-					</div>
+							</tr> -->
+<!-- 						</table> -->
+				<!-- 	</div> -->
 				</div>
 
 				<!-- Button to compare page -->
-				<div id="buttonSpace">
-					<form action="compare/" method="post" >
-						{% csrf_token %}
-						<input type="submit" value="Submit" />
-					</form>
-				</div>
+
 			</div>
 
 			<!-- Footer zone -->
