@@ -1,15 +1,23 @@
 {% block content %}
 <section id="services" class="bg-light">
+    <div class="container" style="margin-bottom:60px;">
+        <div class="row">
+            <div class="col-lg-3 mx-auto">
+                <h1 class="display-2">
+                    Result
+                </h1>
+            </div>
+        </div>
+    </div>
     <div class="container">
         <div class="row">
             <div class="col-lg-8 mx-auto">
-                <!-- <h3>{{ eba }}</h3> -->
                 <table class="table">
                     <caption>{{ eba }}</caption>
                     <thead>
                         <tr>
-                            <th>Condition</th>
-                            <th>EAB Result</th> 
+                            <th>Conditions</th>
+                            <th>EAB Results</th> 
                         </tr>
                     </thead>
                     <tbody>
@@ -23,22 +31,21 @@
                 </table>
             </div>
             <div class="col-lg-4 mx-auto">
-                <!-- <h3>{{ award }}</h3> -->
                 <table class="table">
                     <caption>{{ award }}</caption>
                     <thead>
                         <tr>
-                            <th>Award conditions</th> 
+                            <th>Award Results</th> 
                         </tr>
                     </thead>
                     <tbody>
                         {% for v in para %}
                         <tr>       
                             {% if v.compared %}
-                                <td height="70"> {{ v.value }} </td>
+                                <td height="70" class="bg-success"> {{ v.value }} </td>
                                 <td ><i class="fas fa-check"></i></td>
                             {% else %}
-                                <td height="70" bgcolor="#FF0000"> {{ v.value }} </td>
+                                <td height="70" class="bg-warning"> {{ v.value }} </td>
                                 <td><i class="fas fa-times"></i></td>
                             {% endif %}
                         </tr>

@@ -6,59 +6,79 @@
 <div id="myDIV" style="display:none;"> 
     <div class="form-row">
         <div class="col-md-4 mb-3">
-            <label for="ordinary">Ordinary Hours of Work</label>
-            <input type="text" class="form-control" id="ordinary" value="" >
+            <label for="ordinary">Ordinary Hours of Work (Start-End)</label>
+            <div class="row">
+                <div class="col-md-6">
+                    <select class="form-control" name="ordinary_start">
+                        <option value="6:00">6:00</option>
+                        <option value="7:00">7:00</option>
+                        <option value="8:00">8:00</option>
+                        <option value="9:00">9:00</option>
+                        <option value="10:00">10:00</option>
+                    </select>
+                </div>
+
+                <div class="col-md-6">
+                    <select class="form-control" name="ordinary_end">
+                        <option value="5:00">17:00</option>
+                        <option value="6:00">18:00</option>
+                        <option value="7:00">19:00</option>
+                        <option value="8:00">20:00</option>
+                        <option value="9:00">21:00</option>
+                    </select>
+                </div>
+            </div>
         </div>
 
         <div class="col-md-4 mb-3">
             <label for="Maximum">Maximum Daily Working Hours</label>
-            <input type="text" class="form-control" id="Maximum" value="" >
+            <input type="text" class="form-control" name="Maximum" placeholder="8 hours" id='required'>
         </div>
 
         <div class="col-md-4 mb-3">
             <label for="Minimum">Minimum Daily Working Hours</label>
-            <input type="text" class="form-control" id="Minimum" value="" >
+            <input type="text" class="form-control" name="Minimum" placeholder="4 hours" id='required'>
         </div>
     </div>
 
     <div class="form-row">
         <div class="col-md-4 mb-3">
             <label for="Maximum Weekly">Maximum Weekly Working Hours</label>
-            <input type="text" class="form-control" id="Maximum Weekly" value="" >
+            <input type="text" class="form-control" name="Maximum Weekly" placeholder="38 hours" id='required'>
         </div>
 
         <div class="col-md-4 mb-3">
             <label for="Public Holiday">Public Holiday Rate</label>
-            <input type="text" class="form-control" id="Public Holiday" value="" >
+            <input type="text" class="form-control" name="Public Holiday" placeholder="2.5 times" id='required'>
         </div>
 
         <div class="col-md-4 mb-3">
             <label for="Overtime">Overtime Conditions</label>
-            <input type="text" class="form-control" id="Overtime" value="" >
+            <input type="text" class="form-control" name="Overtime"  placeholder="2 times" id='required'>
         </div>
     </div>
 
     <div class="form-row">
         <div class="col-md-4 mb-3">
             <label for="Casual">Casual Loading</label>
-            <input type="text" class="form-control" id="Casual" value="" >
+            <input type="text" class="form-control" name="Casual" placeholder="25%" id='required'>
         </div>
 
         <div class="col-md-4 mb-3">
             <label for="Saturday">Saturday Rate</label>
-            <input type="text" class="form-control" id="Saturday" value="" >
+            <input type="text" class="form-control" name="Saturday"  placeholder="1.5 times" id='required'>
         </div>
 
         <div class="col-md-4 mb-3">
             <label for="Sunday">Sunday Rate</label>
-            <input type="text" class="form-control" id="Sunday" value="" >
+            <input type="text" class="form-control" name="Sunday" placeholder="2 times" id='required'>
         </div>
     </div>
 
     <div class="form-row">
         <div class="col-md-12 mb-3">
             <label for="Minimum Break">Minimum Break Between Shifts</label>
-            <input type="text" class="form-control" id="Minimum Break" value="" >
+            <input type="text" class="form-control" name="Minimum Break" placeholder="10 hours" id='required'>
         </div>
     </div>
 </div>  

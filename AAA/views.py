@@ -5,7 +5,7 @@ import os
 from .forms import LinkForm
 import csv
 from django.contrib import messages
-from findPattern import *
+from .findPattern import *
 from .read_file import read_file
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -16,7 +16,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # index view
 def index(request):
-    return render(request, 'index1.html')
+    return render(request, 'index.html')
 
 def get_paras(num):
 	data = read_file('data/Comparison Parameters - Sheet1.csv')[1:]
@@ -47,16 +47,12 @@ def compare_eba(eba, award):
 		if i == 1 or i == 2 or i == 3:
 			result = findall(r"(\d+(?:\.\d+)?)",value)
 			result2 = findall(r"(\d+(?:\.\d+)?)",award[i])
-			# print (result)
-			# print (result2)
 			a = float(result[0])
 			b = float(result2[0])
 			results.append(a <= b)
 		if i == 4 or i == 5 or i == 6 or i == 7 or i == 8 or i == 9:
 			result = findall(r"(\d+(?:\.\d+)?)",value)
 			result2 = findall(r"(\d+(?:\.\d+)?)",award[i])
-			# print (result)
-			# print (result2)
 			a = float(result[0])
 			b = float(result2[0])
 			results.append(a >= b)
@@ -102,12 +98,21 @@ def compare(request):
 		# 	if i[1]:
 		# 		scores+=1
 
-		# checkbox = request.POST.get('my_checkbox', False)
-		# print (checkbox)
 		if request.POST.get('my_checkbox', False):
-			pass
+			eba = 'custome eba'
+			context = { 
+				'Ordinary Hours of Work': request.POST['ordinary_start'] + "am - " + request.POST['ordinary_end'] + "pm",
+				'Maximum Daily Working Hour': request.POST['Maximum'],
+				'Minimum Daily Working Hours': request.POST['Minimum'],
+				'Maximum Weekly Working Hours': request.POST['Maximum Weekly'],
+				'Public Holiday Rate': request.POST['Public Holiday'],
+				'Overtime Conditions': request.POST['Overtime'],
+				'Casual Loading': request.POST['Casual'],
+				'Saturday Rate': request.POST['Saturday'],
+				'Sunday Rate': request.POST['Sunday'],
+				'Minimum Break Between Shifts': request.POST['Minimum Break']
+			}
 		else:
-			print ("not checked")
 			eba, context = get_eba(int(request.POST['eba_select']))
 		
 		award, para = get_paras(int(request.POST['select']))
@@ -121,14 +126,10 @@ def compare(request):
 			})
 			if a[i]:
 				scores+= 10
-	return render(request, 'index1.html', {
+	return render(request, 'compare_result.html', {
 		'eba': eba,
 		'award': award,
 		'data': context.items(),
 		'para': params,
 		'score': scores
 	})
-
-# Create a compare page
-def conditions(request):
-    return render(request, 'conditions.html')
