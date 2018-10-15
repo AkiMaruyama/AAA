@@ -1,7 +1,7 @@
-function toggleCheckbox(){
+function toggleCheckbox(elem){
     var x = document.getElementById("myDIV");
     
-    if (x.style.display === "none") {
+    if (elem.checked) {
         x.style.display = "block";
         let elems = document.getElementsByClassName("form-control");
         for(let i=0;i<elems.length;i++){
@@ -15,3 +15,7 @@ function toggleCheckbox(){
         }
     }
 }
+
+$(document).ready(function(){
+    $('input:checkbox').prop('checked', false);
+ }); 
