@@ -67,47 +67,72 @@ def extract_ordinary_hours(url):
 	hours = findall(r"(\d+\.\d+) [a|p]m",result)
 	for i in range(len(hours)):
 		hours[i] = str(int(float(hours[i])))
+	if not hours:
+		hours='not found'
 	return (hours)
 
 def extract_max_daily_hours(url):
 	max_daily_pt = ["ordinary", "hour"]
 	max_daily_ep = "maximum length ordinary hours one shift exceed 10 hours meal breaks required day worked"
 	result = extract_condition(url, max_daily_pt, max_daily_ep)
-	# print (result)
 	hours = findall(r"(\d+) [ordinary ]?hours",result)
+	if not hours:
+		hours = 10
+	else:
+		if int(hours[0]) > 15:
+			hours = 10 
 	return (hours)
 
 def extract_max_weekly_hours(url):
 	pt = ["ordinary", "hour", "week"]
 	ep = "The ordinary hours of work will be an average of 38 hours per week over a four week cycle"
 	result = extract_condition(url, pt, ep)
-	# print (result)
 	hours = findall(r"(\d+) [hours ]?per week",result)
+	if not hours:
+		hours = 38
+
 	return (hours)
 
 def extract_public_rate(url):
 	pt = ["rate", "paid", "public", "holiday"]
 	ep = "ordinary hours performed on a public holiday must be paid at the rate of double time and a half for all hours of work."
 	result = extract_condition(url, pt, ep)
-	# print (result)
-	hours = findall(r"of ([a-z]+) time",result)[0]
+	hours = findall(r"of ([a-z]+) time",result)
+	if hours:
+		hours = hours[0]
+	else:
+		hours = '2.5'
+
+	if hours == "double":
+		hours = 2
 	return (hours)
 
 def extract_casual_loading(url):
 	pt = ["casual", "paid", "rate", "employee"]
 	ep = "A casual employee must be paid per hour at the rate of 1/38th of the weekly rate prescribed for the class of work performed,plus 25%."
 	result = extract_condition(url, pt, ep)
-	# print (result)
-	rate = findall(r"(\d+)%",result)[0]
+	rate = findall(r"(\d+)%",result)
+	if rate:
+		rate = rate[0]
+	else:
+		rate = 30
 	return (rate)
 
-# def extract_sunday_rate(text):
-# 	return pattern[0].title()
+def extract_satday_rate(url):
+	return 1.5
+
+def extract_sunday_rate(url):
+	return 2
+
+def test(url):
+	print(extract_ordinary_hours(url))
+	print(extract_max_daily_hours(url))
+	print(extract_max_weekly_hours(url))
+	print(extract_public_rate(url))
+	print(extract_casual_loading(url))
+	print(extract_sunday_rate(url))
+	print(extract_satday_rate(url))
 
 
-# extract_ordinary_hours(URL[1])
-# extract_max_daily_hours(URL[1])
-# extract_max_weekly_hours(URL[1])
-# extract_public_rate(URL[1])
-# extract_casual_loading(URL[1])
+# test(URL[2])
 

@@ -1,0 +1,34 @@
+<section id="about">
+    <div class="container">
+        <div class="row">
+        <div class="col-lg-10 mx-auto">
+            <form action="compare/" method="post">
+                <div class="form-group">
+                    {% csrf_token %}
+                    <label for="ebaSelecter">Select a EBA document</label>
+                    <select class="form-control" id="eba_select" name="eba_select">
+                        <option value="1">SupaBarn EBA</option>
+                        <option value="2">ATCO EBA</option>
+                        <option value="3">Armenian EBA</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="awardSelecter">Select an award to analyse</label>
+                    <select class="form-control" id="select" name="select">
+                        <option value='1'>General Retail Industry Award 2010</option>
+                        <option value='2'>Manufacturing and Associated Industries and Occupations Award 2010</option>
+                        <option value='3'>Asphalt Industry Award 2010</option>
+                        <option value='4'>Animal Care and Veterinary Services Award 2010</option>
+                        <option value='5'>Amusement, Events and Recreation Award 2010</option>
+                        <option value='6'>Building and Construction General On-site Award 2010</option>
+                        <option value='7'>Graphic Arts,Printing and Publishing Award 2010</option>
+                        <option value='8'>Journalists Published Media Award 2010</option>
+                    </select>
+                </div>
+                {% include "manual_type.html"%}
+                <button type="submit" id="compare" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+        </div>
+    </div>
+</section>

@@ -21,7 +21,7 @@
 
 			<div class="rowSpace">
 				<div class="columnSpace">
-					<div id="MainContent">Results</div>
+					<div id="MainContent">EBA Results</div>
 					<div class="overflowSpace">
 						<table id="customers">
 						<tr>
@@ -40,7 +40,7 @@
 
 				<div class="columnSpace">
 
-					<div id = "MainContent"> Compared conditions </div>
+					<div id = "MainContent"> Award conditions </div>
 					{% for value in compared %}
 					<label class="container"> {{ value.0 }}
 						{% if value.1 %}
@@ -56,12 +56,12 @@
 					{% endfor %}		
 				</div>
 
-<!-- 				<div class="columnSpace1">
-					<div id="scoreResult"> -->
-						<p class = "scoreResult"> Score: {{ score }} </p>
-<!-- 					</div>
-				</div> -->
-			</div>
+<!-- 				<div class="columnSpace1"> -->
+					<div id="scoreResult">
+					<p class = "scoreResult"> Score: {{ score }} / 100 </p>
+					</div>
+				</div>
+<!-- 			</div> -->
 
 			<div class = "FooterSpace">
 				<div class = "Footer" style="color:#D4D4D4;"><br><p>Tanda - Contact Us: info@tanda.co</p></div>

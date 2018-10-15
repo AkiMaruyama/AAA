@@ -8,7 +8,10 @@
 		<link rel="stylesheet" type="text/css" href="{% static "style.css" %}" />
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 		<script src="{% static "JavaScript.js" %}"></script>
-
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 	</head>
 
 	<body id = "IndexImage">
@@ -58,17 +61,17 @@
 					<div id = "MainContent"> Choose Award </div>
 
 <!-- 					<div id="buttonSpace"> -->
-						<form action="compare/" method="post">
+<!-- 						<form action="compare/" method="post">
 							{% csrf_token %}
 							<label for="link">Please enter link: </label>
 		    				<input id="link" type="text" name="link" value="{{ link }}">
 							<input type="submit" value="Submit" />
-						</form>
+						</form> -->
 <!-- 						</div> -->
 					<!-- Right side content -->
-					<!-- <div id = "selectForm"> -->
+					<div id = "selectForm">
 
-<!-- 						<table id="rowClick">
+						<table id="rowClick">
 							<tr>
 								<th>Asphalt Industry Award 2010</th>
 							</tr>
@@ -77,8 +80,8 @@
 							</tr>
 							<tr>
 								<th>Aged Care Award 2010</th>
-							</tr> -->
-<!-- 							<tr>
+							</tr>
+							<tr>
 								<th>Amusement, Events and Recreation Award 2010</th>
 							</tr>
 							<tr>
@@ -134,9 +137,9 @@
 							</tr>
 							<tr>
 								<th>Marine Tourism and Charter Vessels Award 2010</th>
-							</tr> -->
-<!-- 						</table> -->
-				<!-- 	</div> -->
+							</tr>
+						</table>
+					</div>
 				</div>
 
 				<!-- Button to compare page -->

@@ -1,0 +1,65 @@
+{% block content %} 
+<div class="form-group form-check">
+    <input type="checkbox" class="form-check-input" id="my_checkbox" name="my_checkbox" onchange="toggleCheckbox()">
+    <label class="form-check-label" for="my_checkbox">Would you like to mmanually typing the conditions?</label>
+</div>
+<div id="myDIV" style="display:none;"> 
+    <div class="form-row">
+        <div class="col-md-4 mb-3">
+            <label for="ordinary">Ordinary Hours of Work</label>
+            <input type="text" class="form-control" id="ordinary" value="" >
+        </div>
+
+        <div class="col-md-4 mb-3">
+            <label for="Maximum">Maximum Daily Working Hours</label>
+            <input type="text" class="form-control" id="Maximum" value="" >
+        </div>
+
+        <div class="col-md-4 mb-3">
+            <label for="Minimum">Minimum Daily Working Hours</label>
+            <input type="text" class="form-control" id="Minimum" value="" >
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="col-md-4 mb-3">
+            <label for="Maximum Weekly">Maximum Weekly Working Hours</label>
+            <input type="text" class="form-control" id="Maximum Weekly" value="" >
+        </div>
+
+        <div class="col-md-4 mb-3">
+            <label for="Public Holiday">Public Holiday Rate</label>
+            <input type="text" class="form-control" id="Public Holiday" value="" >
+        </div>
+
+        <div class="col-md-4 mb-3">
+            <label for="Overtime">Overtime Conditions</label>
+            <input type="text" class="form-control" id="Overtime" value="" >
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="col-md-4 mb-3">
+            <label for="Casual">Casual Loading</label>
+            <input type="text" class="form-control" id="Casual" value="" >
+        </div>
+
+        <div class="col-md-4 mb-3">
+            <label for="Saturday">Saturday Rate</label>
+            <input type="text" class="form-control" id="Saturday" value="" >
+        </div>
+
+        <div class="col-md-4 mb-3">
+            <label for="Sunday">Sunday Rate</label>
+            <input type="text" class="form-control" id="Sunday" value="" >
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="col-md-12 mb-3">
+            <label for="Minimum Break">Minimum Break Between Shifts</label>
+            <input type="text" class="form-control" id="Minimum Break" value="" >
+        </div>
+    </div>
+</div>  
+{% endblock %}
