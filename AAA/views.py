@@ -39,7 +39,7 @@ def compare_eba(eba, award):
 	results = []
 	for i, value in enumerate(eba):
 		if i == 0:
-			result = findall(r"(\d+):",value)
+			result = findall(r"(\d+)[:|.]",value)
 			result2 = findall(r"(\d+):",award[i])
 			a = int(result[1]) + 12 - int(result[0])
 			b = int(result2[1]) + 12 - int(result2[0])
@@ -57,7 +57,6 @@ def compare_eba(eba, award):
 			b = float(result2[0])
 			results.append(a >= b)
 	return results
-
 
 def compare(request):
 	context = {}
