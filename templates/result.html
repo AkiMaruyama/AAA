@@ -23,7 +23,7 @@
                     <tbody>
                         {% for key, value in data %}
                         <tr>
-                            <td width="270" height="70"> {{ key }} </td> 
+                            <td width="270" height="75"> {{ key }} </td> 
                             <!-- <td> {{ value }} </td> -->
                         </tr>
                         {% endfor %}
@@ -43,10 +43,10 @@
                         {% for v in para %}
                         <tr>       
                             {% if v.compared %}
-                                <td height="70" > {{ v.value }} </td>
+                                <td height="75" > {{ v.value }} </td>
                                 <!-- <td ><i class="fas fa-check"></i></td> -->
                             {% else %}
-                                <td height="70"> {{ v.value }} </td>
+                                <td height="75"> {{ v.value }} </td>
                                 <!-- <td><i class="fas fa-times"></i></td> -->
                             {% endif %}
                         </tr>
@@ -72,7 +72,7 @@
                         {% for key, value in data %}
                             <tr>
                                 <!-- <td width="270" height="70"> {{ key }} </td>  -->
-                                <td width="270" height="70"> {{ value }} </td>
+                                <td width="270" height="75"> {{ value }} </td>
                             </tr>
                         {% endfor %}
                         <!-- {% for v in para %}
@@ -100,9 +100,9 @@
                         {% for v in para %}
                         <tr>       
                             {% if v.compared %}
-                                <td height="70"><i class="fas fa-check"></i></td>
+                                <td height="75"><i class="fas fa-check"></i></td>
                             {% else %}
-                                <td height="70"><i class="fas fa-times"></i></td>
+                                <td height="75"><i class="fas fa-times"></i></td>
                             {% endif %}
                         </tr>
                         {% endfor %}
